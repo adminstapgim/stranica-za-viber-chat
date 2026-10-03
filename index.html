@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Start Viber chat</title>
+		<script>
+		    function radioChange()
+			{
+			    const element = document.getElementById("body");
+				const theme = element.getAttribute("tema");
+				let a, b, c;
+				switch (theme)
+				{
+				    case "tamna": a = "svetla"; b = "Azure"; c = "DarkSlateBlue"; break;
+				    case "svetla": a = "tamna"; b = "DarkSlateGrey"; c = "Lavender"; break;
+				}
+				element.setAttribute("tema", a);
+				element.setAttribute("bgcolor", b);
+				element.setAttribute("text", c);
+			}
+		</script>
+    </head>
+    <body id="body" tema="tamna" bgcolor="DarkSlateGrey" text="Lavender"><center>
+        <h1>Start Viber chat</h1>
+		<img src="https://lh3.googleusercontent.com/d/1vHdiRTS8NVmSISHy4vhLSpvH-9yhM7ns" height="100" />
+		<br /><br />
+		<input type="radio" name="theme" value="dark" onchange="radioChange();" checked /> Tamna tema
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="theme" value="light" onchange="radioChange();" /> Svetla tema
+        <br /><br /><hr /><br />
+        <form method="get" action="viber://chat">
+            <input type="text" size="37" name="number" placeholder="Broj mobilnog telefona (npr. +381601234567)" required />
+            <br /><br /><hr /><br />
+            <input type="submit" value="Start chat" />
+        </form>
+        <script>document.body.style.zoom = "200%"; /* Ovo ne radi u Firefox-u. */</script>
+    </center></body>
+</html>
